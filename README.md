@@ -85,28 +85,6 @@ You should see images from your Discord channel!
 
 ---
 
-## Troubleshooting
-
-**"No images yet..."**
-- Make sure your bot is in the server
-- Make sure the channel_id in config.json is correct
-- Try sending an image in that Discord channel
-
-**"Module not found" error**
-- Make sure you ran `pip install -r requirements.txt`
-- **Linux/Mac:** Try `pip3 install -r requirements.txt`
-
-**"pip" is not recognized**
-- **Windows:** Use `py -m pip install -r requirements.txt`
-- **Linux:** Install pip with `sudo apt install python3-pip` (Ubuntu/Debian) or `sudo dnf install python3-pip` (Fedora)
-
-**Port already in use**
-- Change `"port": 8765` to something else like `"port": 8080`
-- Then visit `http://localhost:8080`
-
-**Permission denied (Linux/Mac)**
-- Make the script executable: `chmod +x canvas_caster.py`
-
 ## Use with OBS
 
 You can display the images in OBS as a browser source!
@@ -138,6 +116,29 @@ Now your Discord images will show up in your stream!
 | `channel_id` | Discord channel to watch | Required |
 | `port` | Web server port number | 8765 |
 | `image_duration` | How long each image shows (seconds) | 600 |
+
+## Troubleshooting
+
+**"No images yet..."**
+- Make sure your bot is in the server
+- Make sure the channel_id in config.json is correct
+- Try sending an image in that Discord channel
+
+**"Module not found" error**
+- Make sure you ran `pip install -r requirements.txt`
+- **Linux/Mac:** Try `pip3 install -r requirements.txt`
+
+**"pip" is not recognized**
+- **Windows:** Use `py -m pip install -r requirements.txt`
+- **Linux:** Install pip with `sudo apt install python3-pip` (Ubuntu/Debian) or `sudo dnf install python3-pip` (Fedora)
+
+**Port already in use**
+- Change `"port": 8765` to something else like `"port": 8080`
+- Then visit `http://localhost:8080`
+
+**Permission denied (Linux/Mac)**
+- Make the script executable: `chmod +x canvas_caster.py`
+
 
 ## Need Help?
 
