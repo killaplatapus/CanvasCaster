@@ -1,67 +1,98 @@
 # CanvasCaster
 
-A Discord bot that displays images from a channel on a local web server, rotating through them automatically.
+Shows images from a Discord channel on a webpage. Simple as that.
 
-## Setup
+## What You Need
 
-### 1. Create a Discord Bot
+- Python installed ([download here](https://www.python.org/downloads/))
+- A Discord bot token
+- A Discord server where you can add bots
+
+---
+
+## Step 1: Get Your Discord Bot Token
 
 1. Go to [Discord Developer Portal](https://discord.com/developers/applications)
-2. Click "New Application" and name it
-3. Go to "Bot" and click "Reset Token" to get your token
-4. Enable these intents under "Privileged Gateway Intents":
+2. Click **New Application** and give it a name (like "CanvasCaster")
+3. Click **Bot** on the left sidebar
+4. Click **Reset Token** and copy the token (it's a long string of letters and numbers)
+5. **IMPORTANT:** Save this token somewhere safe! You'll need it later.
+6. Scroll down to **Privileged Gateway Intents** and turn ON:
    - **Message Content Intent**
    - **Server Members Intent**
 
-### 2. Add Bot to Your Server
+## Step 2: Add the Bot to Your Discord Server
 
-1. Go to "OAuth2" > "OAuth2 URL Generator"
-2. Select scopes: `bot` and `applications.commands`
-3. Copy the generated URL
-4. Visit the URL and select your server
+1. In the Developer Portal, go to **OAuth2** > **URL Generator**
+2. Check the boxes for `bot` and `applications.commands`
+3. Copy the URL at the bottom
+4. Paste that URL into your browser
+5. Select your server and click **Authorize**
 
-### 3. Configure the Bot
+## Step 3: Get Your Channel ID
 
-```bash
-# Install dependencies
-pip install -r requirements.txt
+1. Open Discord
+2. Click the **gear icon** (User Settings) at the bottom left
+3. Go to **Advanced** and turn on **Developer Mode**
+4. Right-click on the channel you want to monitor
+5. Click **Copy Channel ID**
 
-# Copy the example config
-copy config.example.json config.json
-```
+## Step 4: Set Up the Files
 
-Edit `config.json`:
-```json
-{
-    "token": "YOUR_BOT_TOKEN_HERE",
-    "channel_id": 123456789012345678,
-    "port": 8765,
-    "fetch_interval": 3600
-}
-```
+1. Download CanvasCaster from GitHub
+2. Open the folder and right-click inside the folder
+3. Select **Open in Terminal** (or **Open PowerShell window here**)
+4. Type this and press Enter:
+   ```
+   pip install -r requirements.txt
+   ```
 
-**Find your Channel ID:** Enable Developer Mode in Discord settings, then right-click your channel and select "Copy Channel ID"
+## Step 5: Configure the Bot
 
-### 4. Run the Bot
+1. In the CanvasCaster folder, find `config.example.json`
+2. Make a copy and rename it to `config.json`
+3. Open `config.json` in a text editor (like Notepad)
+4. Fill in your details:
+   ```json
+   {
+       "token": "paste your bot token here",
+       "channel_id": 123456789012345678,
+       "port": 8765,
+       "fetch_interval": 3600
+   }
+   ```
+   - Replace the token with your bot token from Step 1
+   - Replace the channel_id with the number you copied in Step 3
+5. Save and close the file
 
-```bash
-python canvas_caster.py
-```
+## Step 6: Run It!
 
-The web server will be available at `http://localhost:8765`
+1. In the terminal, type:
+   ```
+   python canvas_caster.py
+   ```
+2. Press Enter
+3. Wait a few seconds, then open your browser
+4. Go to: `http://localhost:8765`
 
-## Configuration Options
+You should see images from your Discord channel!
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| `token` | Your Discord bot token | Required |
-| `channel_id` | Discord channel to monitor | Required |
-| `port` | Web server port | 8765 |
-| `fetch_interval` | Seconds between channel fetches | 3600 |
+---
 
-## Features
+## Troubleshooting
 
-- Monitors a Discord channel for images
-- Displays images on a local web page
-- Auto-rotates through images every 10 seconds
-- Supports image attachments and image URLs in messages
+**"No images yet..."**
+- Make sure your bot is in the server
+- Make sure the channel_id in config.json is correct
+- Try sending an image in that Discord channel
+
+**"Module not found" error**
+- Make sure you ran `pip install -r requirements.txt`
+
+**Port already in use**
+- Change `"port": 8765` to something else like `"port": 8080`
+- Then visit `http://localhost:8080`
+
+## Need Help?
+
+Open an issue on GitHub: https://github.com/thecosyplatypus/CanvasCaster/issues
