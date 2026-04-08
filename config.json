@@ -1,0 +1,7 @@
+{
+    "token": "YOUR_DISCORD_BOT_TOKEN",
+    "channel_id": 123456789,
+    "port": 8765,
+    "fetch_interval": 3600,
+    "image_duration": 10
+}
