@@ -17,9 +17,12 @@ Shows images from a Discord channel on a webpage. Simple as that.
 3. Click **Bot** on the left sidebar
 4. Click **Reset Token** and copy the token (it's a long string of letters and numbers)
 5. **IMPORTANT:** Save this token somewhere safe! You'll need it later.
-6. Scroll down to **Privileged Gateway Intents** and turn ON:
+6. Scroll down to **Privileged Gateway Intents** section (at the bottom of the Bot page)
+7. Turn ON these toggles:
    - **Message Content Intent**
    - **Server Members Intent**
+   
+   (If you don't see toggles, look for a text saying your bot needs verification - just scroll down more until you find them)
 
 ## Step 2: Add the Bot to Your Discord Server
 
