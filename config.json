@@ -2,5 +2,9 @@
     "token": "YOUR_DISCORD_BOT_TOKEN",
     "channel_id": 123456789,
     "port": 8765,
-    "image_duration": 600
+    "image_duration": 600,
+    "width": 1920,
+    "height": 1080,
+    "text_size": 40,
+    "text_color": "#fff"
 }

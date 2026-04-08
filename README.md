@@ -62,12 +62,18 @@ Shows images from a Discord channel on a webpage. Simple as that.
     "token": "paste your bot token here",
     "channel_id": 123456789012345678,
     "port": 8765,
-    "image_duration": 600
+    "image_duration": 600,
+    "width": 1920,
+    "height": 1080,
+    "text_size": 40,
+    "text_color": "#fff"
 }
 ```
    - Replace the token with your bot token from Step 1
    - Replace the channel_id with the number you copied in Step 3
    - Change `image_duration` to how many seconds each image shows (default is 600 = 10 mins)
+   - `width` and `height` set the canvas dimensions (for OBS browser source)
+   - `text_size` and `text_color` customize the artist overlay text
 3. Save and close the file
 
 ## Step 6: Run It!
@@ -84,38 +90,6 @@ Shows images from a Discord channel on a webpage. Simple as that.
 You should see images from your Discord channel!
 
 ---
-
-## Use with OBS
-
-You can display the images in OBS as a browser source!
-
-1. Make sure CanvasCaster is running (`python canvas_caster.py`)
-2. Open OBS
-3. Click the **+** button under Sources
-4. Select **Browser Source**
-5. Name it (e.g., "CanvasCaster") and click OK
-6. In the URL box, enter:
-   ```
-   http://localhost:8765
-   ```
-7. Set the **Width** to `1920` and **Height** to `1080`
-8. Click OK
-9. Resize and position the source on your scene
-
-Now your Discord images will show up in your stream!
-
-**Tip:** If you want it to show on both your stream and preview, just resize the browser source. If you only want it on stream, right-click the source and select "Transform" > "Fit to Screen" and enable "Render off-screen to files" in OBS settings.
-
----
-
-## Config Options
-
-| Setting | What it does | Default |
-|---------|-------------|---------|
-| `token` | Your Discord bot token | Required |
-| `channel_id` | Discord channel to watch | Required |
-| `port` | Web server port number | 8765 |
-| `image_duration` | How long each image shows (seconds) | 600 |
 
 ## Troubleshooting
 
@@ -139,6 +113,53 @@ Now your Discord images will show up in your stream!
 **Permission denied (Linux/Mac)**
 - Make the script executable: `chmod +x canvas_caster.py`
 
+## Use with OBS
+
+You can display the images in OBS as a browser source!
+
+1. Make sure CanvasCaster is running (`python canvas_caster.py`)
+2. Open OBS
+3. Click the **+** button under Sources
+4. Select **Browser Source**
+5. Name it (e.g., "CanvasCaster") and click OK
+6. In the URL box, enter:
+   ```
+   http://localhost:8765
+   ```
+7. Set the **Width** and **Height** to match your config settings (default 1920x1080)
+8. Click OK
+9. Resize and position the source on your scene
+
+**Tip:** Set `width` and `height` in config.json to match your OBS browser source dimensions for best results.
+
+Now your Discord images will show up in your stream!
+
+**Tip:** If you want it to show on both your stream and preview, just resize the browser source. If you only want it on stream, right-click the source and select "Transform" > "Fit to Screen" and enable "Render off-screen to files" in OBS settings.
+
+---
+
+## Config Options
+
+| Setting | What it does | Default |
+|---------|-------------|---------|
+| `token` | Your Discord bot token | Required |
+| `channel_id` | Discord channel to watch | Required |
+| `port` | Web server port number | 8765 |
+| `image_duration` | How long each image shows (seconds) | 600 |
+| `width` | Canvas width in pixels | 1920 |
+| `height` | Canvas height in pixels | 1080 |
+| `text_size` | Artist name text size in pixels | 40 |
+| `text_color` | Artist name text color (hex) | #fff |
+
+### Artist Attribution
+
+To display artist credit on images, include `artist: username` in your Discord message:
+
+```
+artist: thecozyplatypus
+```
+
+This will display "CREATED BY: THECOZYPLATYPUS" on the image overlay.
 
 ## Need Help?
 
