@@ -73,14 +73,15 @@ Shows images from a Discord channel on a webpage. Simple as that.
 
 ## Step 6: Run It!
 
-1. In the terminal, type:
+1. If the terminal is closed, right-click inside the folder and select **Open in Terminal** or **Open PowerShell window here**
+2. In the terminal, type:
    ```
    python canvas_caster.py
    ```
    - **Linux/Mac:** If that doesn't work, try: `python3 canvas_caster.py`
-2. Press Enter
-3. Wait a few seconds, then open your browser
-4. Go to: `http://localhost:8765`
+3. Press Enter
+4. Wait a few seconds, then open your browser
+5. Go to: `http://localhost:8765`
 
 You should see images from your Discord channel!
 
