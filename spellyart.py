@@ -70,7 +70,7 @@ async def handler(request):
 <html>
 <head>
 <title>Spelly Art</title>
-<meta http-equiv="refresh" content="2">
+<meta http-equiv="refresh" content="600">
 <style>
     * {{ margin: 0; padding: 0; box-sizing: border-box; }}
     body {{ display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #000; }}
