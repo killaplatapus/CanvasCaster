@@ -2,5 +2,5 @@
     "token": "YOUR_DISCORD_BOT_TOKEN",
     "channel_id": 123456789,
     "port": 8765,
-    "time": 10
+    "image_duration": 600
 }

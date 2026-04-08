@@ -61,9 +61,8 @@ Shows images from a Discord channel on a webpage. Simple as that.
    {
        "token": "paste your bot token here",
        "channel_id": 123456789012345678,
-       "port": 8765,
-       "fetch_interval": 600,
-       "image_duration": 600
+"port": 8765,
+        "image_duration": 600
    }
    ```
    - Replace the token with your bot token from Step 1
